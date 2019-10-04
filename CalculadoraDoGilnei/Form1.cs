@@ -45,5 +45,12 @@ namespace CalculadoraDoGilnei
                txtDisplay.Text = txtDisplay.Text + b.Text;
             }
         }
+
+        private void operacao_Click(object sender, EventArgs e)
+        {
+            Button b = (Button)sender;
+            operacao = b.Text;
+            resultado = Double.Parse(txtDisplay.Text);
+        }
     }
 }
