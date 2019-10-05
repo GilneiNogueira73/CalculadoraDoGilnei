@@ -17,6 +17,7 @@ namespace CalculadoraDoGilnei
         bool inserir_valor = false;
         String primeironum, segundonum;
         bool negativo = false;
+        bool historico = false;
 
         public Form1()
         {
@@ -148,6 +149,20 @@ namespace CalculadoraDoGilnei
                 }
                 txtDisplay.Text = "-" + txtDisplay.Text;
                 negativo = true;
+            }
+        }
+
+        private void btnMostrarHistorico_Click(object sender, EventArgs e)
+        {
+            if (historico == true)
+            {
+                this.ClientSize = new System.Drawing.Size(420, 690);
+                historico = false;
+            }
+            else
+            {
+                this.ClientSize = new System.Drawing.Size(789, 690);
+                historico = true;
             }
         }
 

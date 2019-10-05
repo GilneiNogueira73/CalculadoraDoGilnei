@@ -54,6 +54,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDisplay = new System.Windows.Forms.TextBox();
             this.lblMostraOps = new System.Windows.Forms.Label();
+            this.btnMostrarHistorico = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnCe
@@ -389,12 +390,24 @@
             this.lblMostraOps.Size = new System.Drawing.Size(0, 25);
             this.lblMostraOps.TabIndex = 6;
             // 
+            // btnMostrarHistorico
+            // 
+            this.btnMostrarHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostrarHistorico.Location = new System.Drawing.Point(204, 44);
+            this.btnMostrarHistorico.Name = "btnMostrarHistorico";
+            this.btnMostrarHistorico.Size = new System.Drawing.Size(186, 62);
+            this.btnMostrarHistorico.TabIndex = 7;
+            this.btnMostrarHistorico.Text = "Mostrar / Ocultar Histórico";
+            this.btnMostrarHistorico.UseVisualStyleBackColor = true;
+            this.btnMostrarHistorico.Click += new System.EventHandler(this.btnMostrarHistorico_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.ClientSize = new System.Drawing.Size(773, 651);
+            this.ClientSize = new System.Drawing.Size(404, 651);
+            this.Controls.Add(this.btnMostrarHistorico);
             this.Controls.Add(this.lblMostraOps);
             this.Controls.Add(this.txtDisplay);
             this.Controls.Add(this.label1);
@@ -457,6 +470,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDisplay;
         private System.Windows.Forms.Label lblMostraOps;
+        private System.Windows.Forms.Button btnMostrarHistorico;
     }
 }
 
