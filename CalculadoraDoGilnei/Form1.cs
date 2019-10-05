@@ -15,7 +15,7 @@ namespace CalculadoraDoGilnei
         Double resultado = 0;
         String operacao = "";
         bool inserir_valor = false;
-        char iOperacao;
+        String primeironum, segundonum;
 
         public Form1()
         {
@@ -49,8 +49,93 @@ namespace CalculadoraDoGilnei
         private void operacao_Click(object sender, EventArgs e)
         {
             Button b = (Button)sender;
-            operacao = b.Text;
-            resultado = Double.Parse(txtDisplay.Text);
+
+            if (resultado != 0)
+            {
+                btnIgual.PerformClick();
+                inserir_valor = true;
+                operacao = b.Text;
+                lblMostraOps.Text = resultado + " " + operacao;
+            }
+            else
+            {
+                operacao = b.Text;
+                resultado = Double.Parse(txtDisplay.Text);
+                inserir_valor = true;
+                lblMostraOps.Text = resultado + "   " + operacao;
+                txtDisplay.Text = "";
+            }
+
+            primeironum = lblMostraOps.Text;
         }
+
+        private void btnIgual_Click(object sender, EventArgs e)
+        {
+            segundonum = txtDisplay.Text;
+            lblMostraOps.Text = "";
+            switch(operacao)
+            {
+                case "+":
+                    txtDisplay.Text = (resultado + Double.Parse(txtDisplay.Text)).ToString();
+                    break;
+                case "-":
+                    txtDisplay.Text = (resultado - Double.Parse(txtDisplay.Text)).ToString();
+                    break;
+                case "*":
+                    txtDisplay.Text = (resultado * Double.Parse(txtDisplay.Text)).ToString();
+                    break;
+                case "/":
+                    txtDisplay.Text = (resultado / Double.Parse(txtDisplay.Text)).ToString();
+                    break;
+                default:
+                    break;
+            }
+            resultado = Double.Parse(txtDisplay.Text);
+            operacao = "";
+
+            btnLimparHistorico.Visible = true;
+            if (primeironum == null && segundonum != null)
+            {
+                return;
+            }
+            rtbMostraHistorico.AppendText(primeironum + "   " + segundonum + " = " + "\n");
+            rtbMostraHistorico.AppendText("\n\t" + txtDisplay.Text + "\n\n");
+            primeironum = null;
+            segundonum = null;
+            inserir_valor = true;
+        }
+
+        private void btnCe_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = "0";
+        }
+
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            txtDisplay.Text = "0";
+            resultado = 0;
+            lblMostraOps.Text = "";
+        }
+
+        private void btnLimparHistorico_Click(object sender, EventArgs e)
+        {
+            rtbMostraHistorico.Clear();
+            btnLimparHistorico.Visible = false;
+            rtbMostraHistorico.ScrollBars = 0;
+        }
+
+        private void btnBackspace_Click(object sender, EventArgs e)
+        {
+            if (txtDisplay.Text.Length > 0)
+            {
+                txtDisplay.Text = txtDisplay.Text.Remove(txtDisplay.Text.Length - 1, 1);
+            }
+
+            if (txtDisplay.Text == "")
+            {
+                txtDisplay.Text = "0";
+            }
+        }
+
     }
 }
