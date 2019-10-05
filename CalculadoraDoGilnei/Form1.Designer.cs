@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnCe = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnNegPos = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.btnIgual = new System.Windows.Forms.Button();
@@ -111,18 +112,19 @@
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.numbers_Only);
             // 
-            // button7
+            // btnNegPos
             // 
-            this.button7.BackColor = System.Drawing.Color.Gainsboro;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(12, 571);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(90, 68);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "±";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnNegPos.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnNegPos.FlatAppearance.BorderSize = 0;
+            this.btnNegPos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNegPos.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNegPos.Location = new System.Drawing.Point(12, 571);
+            this.btnNegPos.Name = "btnNegPos";
+            this.btnNegPos.Size = new System.Drawing.Size(90, 68);
+            this.btnNegPos.TabIndex = 0;
+            this.btnNegPos.Text = "±";
+            this.btnNegPos.UseVisualStyleBackColor = false;
+            this.btnNegPos.Click += new System.EventHandler(this.btnNegPos_Click);
             // 
             // button8
             // 
@@ -413,16 +415,17 @@
             this.Controls.Add(this.btnIgual);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
+            this.Controls.Add(this.btnNegPos);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnCe);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(789, 690);
             this.MinimumSize = new System.Drawing.Size(420, 690);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Calculadora 1.0";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,7 +436,7 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnNegPos;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button btnIgual;

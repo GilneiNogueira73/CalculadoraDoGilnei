@@ -16,6 +16,7 @@ namespace CalculadoraDoGilnei
         String operacao = "";
         bool inserir_valor = false;
         String primeironum, segundonum;
+        bool negativo = false;
 
         public Form1()
         {
@@ -85,11 +86,18 @@ namespace CalculadoraDoGilnei
                     txtDisplay.Text = (resultado * Double.Parse(txtDisplay.Text)).ToString();
                     break;
                 case "/":
+                    if (operacao == "/" && txtDisplay.Text == "0")
+                    {
+                        MessageBox.Show("Não é possível realizar divisão por 0");
+                        btnC.PerformClick();
+                        return;
+                    }
                     txtDisplay.Text = (resultado / Double.Parse(txtDisplay.Text)).ToString();
                     break;
                 default:
                     break;
             }
+            
             resultado = Double.Parse(txtDisplay.Text);
             operacao = "";
 
@@ -122,6 +130,25 @@ namespace CalculadoraDoGilnei
             rtbMostraHistorico.Clear();
             btnLimparHistorico.Visible = false;
             rtbMostraHistorico.ScrollBars = 0;
+        }
+
+        private void btnNegPos_Click(object sender, EventArgs e)
+        {
+            if (txtDisplay.Text != "" && txtDisplay.Text != "0")
+            {
+                if (txtDisplay.Text.Contains("-"))
+                {
+                    negativo = true;
+                }
+                if (negativo == true)
+                {
+                    txtDisplay.Text = txtDisplay.Text.Remove(0, 1);
+                    negativo = false;
+                    return;
+                }
+                txtDisplay.Text = "-" + txtDisplay.Text;
+                negativo = true;
+            }
         }
 
         private void btnBackspace_Click(object sender, EventArgs e)
