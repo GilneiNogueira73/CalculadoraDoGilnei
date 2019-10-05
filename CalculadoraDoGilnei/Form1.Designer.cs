@@ -385,7 +385,7 @@
             // 
             this.lblMostraOps.AutoSize = true;
             this.lblMostraOps.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMostraOps.Location = new System.Drawing.Point(332, 144);
+            this.lblMostraOps.Location = new System.Drawing.Point(310, 144);
             this.lblMostraOps.Name = "lblMostraOps";
             this.lblMostraOps.Size = new System.Drawing.Size(0, 25);
             this.lblMostraOps.TabIndex = 6;

@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29326.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculadoraDoGilnei", "CalculadoraDoGilnei\CalculadoraDoGilnei.csproj", "{EA63DEFC-8A37-43B6-B7C1-5398E4BAB25A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestesUnitariosCalculadora", "TestesUnitariosCalculadora\TestesUnitariosCalculadora.csproj", "{13E5D8A6-137E-4CE3-A28B-C29DF5B6AF15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EA63DEFC-8A37-43B6-B7C1-5398E4BAB25A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EA63DEFC-8A37-43B6-B7C1-5398E4BAB25A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EA63DEFC-8A37-43B6-B7C1-5398E4BAB25A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{13E5D8A6-137E-4CE3-A28B-C29DF5B6AF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{13E5D8A6-137E-4CE3-A28B-C29DF5B6AF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{13E5D8A6-137E-4CE3-A28B-C29DF5B6AF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{13E5D8A6-137E-4CE3-A28B-C29DF5B6AF15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

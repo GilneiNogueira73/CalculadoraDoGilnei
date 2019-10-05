@@ -64,7 +64,7 @@ namespace CalculadoraDoGilnei
                 operacao = b.Text;
                 resultado = Double.Parse(txtDisplay.Text);
                 inserir_valor = true;
-                lblMostraOps.Text = resultado + "   " + operacao;
+                lblMostraOps.Text = resultado + "  " + operacao;
                 txtDisplay.Text = "";
             }
 
