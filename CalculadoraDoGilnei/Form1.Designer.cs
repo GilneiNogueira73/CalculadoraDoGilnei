@@ -393,13 +393,15 @@
             // 
             // btnMostrarHistorico
             // 
+            this.btnMostrarHistorico.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnMostrarHistorico.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMostrarHistorico.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostrarHistorico.Location = new System.Drawing.Point(204, 44);
             this.btnMostrarHistorico.Name = "btnMostrarHistorico";
             this.btnMostrarHistorico.Size = new System.Drawing.Size(186, 62);
             this.btnMostrarHistorico.TabIndex = 7;
             this.btnMostrarHistorico.Text = "Mostrar / Ocultar Histórico";
-            this.btnMostrarHistorico.UseVisualStyleBackColor = true;
+            this.btnMostrarHistorico.UseVisualStyleBackColor = false;
             this.btnMostrarHistorico.Click += new System.EventHandler(this.btnMostrarHistorico_Click);
             // 
             // Form1

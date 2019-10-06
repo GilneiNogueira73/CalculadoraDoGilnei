@@ -12,12 +12,12 @@ namespace CalculadoraDoGilnei
 {
     public partial class Form1 : Form
     {
-        Double resultado = 0;
-        String operacao = "";
-        bool inserir_valor = false;
-        String primeironum, segundonum;
-        bool negativo = false;
-        bool historico = false;
+        Double resultado = 0;                   //indicador do resultado da operacao
+        String operacao = "";                   //indicador da operação
+        bool inserir_valor = false;             //necessário inserir valor
+        String primeironum, segundonum;         //utilizados no histórico
+        bool negativo = false;                  //utilizado para controle do sinal "-" antes do número
+        bool historico = false;                 //utilizado no botão "Mostrar/Ocultar Histórico"
 
         public Form1()
         {
@@ -111,7 +111,7 @@ namespace CalculadoraDoGilnei
             operacao = "";
 
             btnLimparHistorico.Visible = true;
-            if (primeironum == null && segundonum != null)
+            if (primeironum is null && segundonum != null)
             {
                 return;
             }
