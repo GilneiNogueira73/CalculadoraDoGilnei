@@ -62,10 +62,14 @@ namespace CalculadoraDoGilnei
             else
             {
                 operacao = b.Text;
-                resultado = Double.Parse(txtDisplay.Text);
+                if (txtDisplay.Text != "")
+                {
+                    resultado = Double.Parse(txtDisplay.Text);
                 inserir_valor = true;
                 lblMostraOps.Text = resultado + "  " + operacao;
                 txtDisplay.Text = "";
+                }
+                
             }
 
             primeironum = lblMostraOps.Text;
@@ -75,6 +79,10 @@ namespace CalculadoraDoGilnei
         {
             segundonum = txtDisplay.Text;
             lblMostraOps.Text = "";
+            if (txtDisplay.Text == "")
+            {
+                return;
+            }
             switch(operacao)
             {
                 case "+":
@@ -112,6 +120,10 @@ namespace CalculadoraDoGilnei
             primeironum = null;
             segundonum = null;
             inserir_valor = true;
+            if (double.Parse(txtDisplay.Text) < 0)
+            {
+                negativo = true;
+            }
         }
 
         private void btnCe_Click(object sender, EventArgs e)
@@ -139,13 +151,12 @@ namespace CalculadoraDoGilnei
             {
                 if (txtDisplay.Text.Contains("-"))
                 {
-                    negativo = true;
-                }
-                if (negativo == true)
-                {
-                    txtDisplay.Text = txtDisplay.Text.Remove(0, 1);
-                    negativo = false;
-                    return;
+                    if (negativo == true)
+                    {
+                        txtDisplay.Text = txtDisplay.Text.Remove(0, 1);
+                        negativo = false;
+                        return;
+                    }
                 }
                 txtDisplay.Text = "-" + txtDisplay.Text;
                 negativo = true;

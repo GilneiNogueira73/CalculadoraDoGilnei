@@ -375,6 +375,7 @@
             this.txtDisplay.Location = new System.Drawing.Point(12, 172);
             this.txtDisplay.Multiline = true;
             this.txtDisplay.Name = "txtDisplay";
+            this.txtDisplay.ReadOnly = true;
             this.txtDisplay.Size = new System.Drawing.Size(378, 61);
             this.txtDisplay.TabIndex = 5;
             this.txtDisplay.Text = "0";
