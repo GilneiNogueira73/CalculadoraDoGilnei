@@ -12,21 +12,16 @@ namespace CalculadoraDoGilnei
 {
     public partial class Form1 : Form
     {
-        Double resultado = 0;                   //indicador do resultado da operacao
-        String operacao = "";                   //indicador da operação
-        bool inserir_valor = false;             //necessário inserir valor
-        String primeironum, segundonum;         //utilizados no histórico
-        bool negativo = false;                  //utilizado para controle do sinal "-" antes do número
-        bool historico = false;                 //utilizado no botão "Mostrar/Ocultar Histórico"
+        double resultado;                //indicador do resultado da operacao
+        string operacao;                 //indicador da operação
+        bool inserir_valor;              //necessário inserir valor
+        string primeironum, segundonum;  //utilizados no histórico
+        bool negativo, historico;        //utilizado no botão "Mostrar/Ocultar Histórico"
 
         public Form1()
         {
             InitializeComponent();
-        }
-
-        private void txtDisplay_TextChanged(object sender, EventArgs e)
-        {
-
+            lblMostraOps.Text = "";
         }
 
         private void numbers_Only(object sender, EventArgs e)
@@ -65,11 +60,10 @@ namespace CalculadoraDoGilnei
                 if (txtDisplay.Text != "")
                 {
                     resultado = Double.Parse(txtDisplay.Text);
-                inserir_valor = true;
-                lblMostraOps.Text = resultado + "  " + operacao;
-                txtDisplay.Text = "";
+                    inserir_valor = true;
+                    lblMostraOps.Text = resultado + " " + operacao;
+                    txtDisplay.Text = "";
                 }
-                
             }
 
             primeironum = lblMostraOps.Text;
@@ -79,10 +73,9 @@ namespace CalculadoraDoGilnei
         {
             segundonum = txtDisplay.Text;
             lblMostraOps.Text = "";
-            if (txtDisplay.Text == "")
-            {
-                return;
-            }
+
+            if (txtDisplay.Text == "") return;
+            
             switch(operacao)
             {
                 case "+":
@@ -111,10 +104,8 @@ namespace CalculadoraDoGilnei
             operacao = "";
 
             btnLimparHistorico.Visible = true;
-            if (primeironum is null && segundonum != null)
-            {
-                return;
-            }
+            if (primeironum is null && segundonum != null) return;
+            
             rtbMostraHistorico.AppendText(primeironum + "   " + segundonum + " = " + "\n");
             rtbMostraHistorico.AppendText("\n\t" + txtDisplay.Text + "\n\n");
             primeironum = null;
