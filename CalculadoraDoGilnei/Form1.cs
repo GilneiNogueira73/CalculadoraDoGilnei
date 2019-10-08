@@ -76,8 +76,9 @@ namespace CalculadoraDoGilnei
         private void btnIgual_Click(object sender, EventArgs e)
         {
             segundonum = txtDisplay.Text;
+            if (txtDisplay.Text == "" || lblMostraOps.Text == "") return;
             lblMostraOps.Text = "";
-            if (txtDisplay.Text == "") return;
+
 
             switch(operacao)
             {
